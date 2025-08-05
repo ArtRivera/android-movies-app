@@ -2,4 +2,9 @@
     <string name="app_name">MoviesApp</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_poster_content_description">Image poster of the movie</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="overview">Overview</string>
 </resources>
