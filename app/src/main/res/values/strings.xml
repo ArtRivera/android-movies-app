@@ -7,4 +7,6 @@
     <string name="favorite">Favorite</string>
     <string name="share">Share</string>
     <string name="overview">Overview</string>
+    <string name="movie_list_item">Movie list item</string>
+    <string name="upcoming_movies">Upcoming movies</string>
 </resources>
