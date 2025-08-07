@@ -52,6 +52,7 @@ dependencies {
 
     // Retrofit
     implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.kotlinx.serialization)
 
     // Serialize Json data
     implementation(libs.kotlinx.serialization)

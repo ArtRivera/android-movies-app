@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/movieDetailFragment"
-        android:name="com.artrivera.moviesapp.MovieDetailFragment"
+        android:name="com.artrivera.moviesapp.movie.presentation.movie_details.MovieDetailFragment"
         android:label="fragment_movie_detail"
         tools:layout="@layout/fragment_movie_detail" />
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.artrivera.moviesapp.MovieListFragment"
+        android:name="com.artrivera.moviesapp.movie.presentation.movie_list.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
         <action
