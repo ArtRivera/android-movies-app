@@ -1,7 +1,6 @@
 package com.artrivera.moviesapp.movie.presentation.movie_list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -15,6 +14,8 @@ import com.artrivera.moviesapp.movie.data.repository.MovieRepositoryImpl
 import com.artrivera.moviesapp.movie.presentation.MoviesViewModel
 import com.artrivera.moviesapp.movie.presentation.MoviesViewModelFactory
 import com.artrivera.moviesapp.core.Result
+import com.artrivera.moviesapp.movie.domain.MovieSection
+import com.artrivera.moviesapp.movie.presentation.movie_list.adapters.MovieSectionAdapter
 
 class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
 
@@ -28,7 +29,7 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMovieListBinding.bind(view)
-        viewModel.getUpcomingMovies().observe(viewLifecycleOwner, Observer { result ->
+        viewModel.getMovieSections().observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 is Result.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -36,7 +37,9 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
 
                 is Result.Success<*> -> {
                     binding.progressBar.visibility = View.GONE
-//                    binding.rvMovies.adapter = MoviesAdapter(result.data)
+
+                    val movieSections = result.data as List<MovieSection>
+                    binding.rvMoviesSections.adapter = MovieSectionAdapter(movieSections)
                 }
 
                 is Result.Error -> {
