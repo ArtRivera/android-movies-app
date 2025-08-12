@@ -16,4 +16,7 @@ class MovieRepositoryImpl(private val remoteDataSource: TheMovieDbRemoteDataSour
 
     override suspend fun getTopRatedMovies(): List<Movie> =
         remoteDataSource.getTopRatedMovies().results.map { it.toMovie() }
+
+    override suspend fun getMovieDetail(movieId: Int): Movie =
+        remoteDataSource.getMovieDetail(movieId).toMovie()
 }

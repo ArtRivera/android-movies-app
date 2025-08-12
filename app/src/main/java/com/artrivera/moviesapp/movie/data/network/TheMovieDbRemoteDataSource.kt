@@ -1,5 +1,6 @@
 package com.artrivera.moviesapp.movie.data.network
 
+import com.artrivera.moviesapp.movie.data.dto.MovieDetailDto
 import com.artrivera.moviesapp.movie.data.dto.MoviesResultDto
 
 class TheMovieDbRemoteDataSource(private val service: TheMovieDbService) {
@@ -9,4 +10,6 @@ class TheMovieDbRemoteDataSource(private val service: TheMovieDbService) {
     suspend fun getPopularMovies(): MoviesResultDto = service.getPopularMovies()
 
     suspend fun getTopRatedMovies(): MoviesResultDto = service.getTopRatedMovies()
+
+    suspend fun getMovieDetail(movieId: Int): MovieDetailDto = service.getMovieDetail(movieId)
 }

@@ -10,7 +10,7 @@ import com.artrivera.moviesapp.databinding.MovieListItemBinding
 import com.artrivera.moviesapp.movie.domain.Movie
 import com.bumptech.glide.Glide
 
-class MovieAdapter(
+class MoviesListAdapter(
     private val moviesList: List<Movie>,
     private val itemClickListener: MovieClickListener
 ) :
@@ -52,7 +52,7 @@ class MovieAdapter(
     private inner class MovieViewHolder(val binding: MovieListItemBinding, val context: Context) :
         BaseViewHolder<Movie>(binding.root) {
         override fun bind(item: Movie) {
-            Glide.with(context).load("https://image.tmdb.org/t/p/w500/${item.posterImagePath}")
+            Glide.with(context).load(item.posterPath)
                 .centerCrop()
                 .into(binding.movieImage)
         }

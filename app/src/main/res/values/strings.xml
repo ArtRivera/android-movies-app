@@ -9,4 +9,5 @@
     <string name="overview">Overview</string>
     <string name="movie_list_item">Movie list item</string>
     <string name="upcoming_movies">Upcoming movies</string>
+    <string name="backdrop_image_of_the_movie">Backdrop image of the movie</string>
 </resources>

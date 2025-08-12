@@ -3,8 +3,8 @@ package com.artrivera.moviesapp.movie.domain
 data class Movie(
     val id: Int,
     val title: String,
-    val posterImagePath: String,
-    val backdropImagePath: String,
+    val posterId: String,
+    val backdropImageId: String,
     val releaseDate: String,
     val voteAverage: Double,
     val voteCount: Int,
@@ -14,5 +14,11 @@ data class Movie(
     val originalLanguage: String,
     val originalTitle: String,
     val popularity: Double,
-)
+) {
+    val posterPath: String
+        get() = "https://image.tmdb.org/t/p/w500/$posterId"
+
+    val backdropPath: String
+        get() = "https://image.tmdb.org/t/p/w500/$backdropImageId"
+}
 

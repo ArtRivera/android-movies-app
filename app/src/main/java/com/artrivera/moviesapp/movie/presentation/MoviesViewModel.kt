@@ -11,9 +11,16 @@ import kotlinx.coroutines.Dispatchers
 
 class MoviesViewModel(private val repository: MovieRepository) : ViewModel() {
 
+    val moviesSections = mutableListOf<MovieSection>()
+
     fun getMovieSections() = liveData(Dispatchers.IO) {
         emit(Result.Loading)
-        val moviesSections = mutableListOf<MovieSection>()
+
+        if (moviesSections.isNotEmpty()) {
+            emit(Result.Success(moviesSections))
+            return@liveData
+        }
+
         try {
             val upcomingMovies = repository.getUpcomingMovies()
             moviesSections.add(MovieSection("Upcoming", upcomingMovies))
@@ -45,8 +52,6 @@ class MoviesViewModel(private val repository: MovieRepository) : ViewModel() {
             emit(Result.Success(moviesSections))
         }
     }
-
-
 }
 
 
