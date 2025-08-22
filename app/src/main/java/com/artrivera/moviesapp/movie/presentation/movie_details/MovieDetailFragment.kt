@@ -72,11 +72,17 @@ class MovieDetailFragment : BaseFragment() {
                     val movie = result.data as Movie
                     Glide.with(view).load(movie.posterPath).into(binding.posterMovieImage)
                     Glide.with(view).load(movie.backdropPath).into(binding.backdropMovieImage)
-                    binding.textView.text = movie.title
+                    binding.movieTitle.text = movie.title
                     binding.txtOverviewDescription.text = movie.overview
-                    binding.txtLanguage.text = "Language: ${movie.originalLanguage}"
-                    binding.txtReleaseDate.text = "Released on ${movie.releaseDate}"
-                    binding.txtReviews.text = "${movie.voteAverage} (${movie.voteCount} reviews)"
+                    binding.txtLanguage.text =
+                        getString(R.string.language_of_the_movie, movie.originalLanguage)
+                    binding.txtReleaseDate.text =
+                        getString(R.string.release_date_of_the_movie, movie.releaseDate)
+                    binding.txtReviews.text = getString(
+                        R.string.votes_average_reviews_of_the_movie,
+                        movie.voteAverage,
+                        movie.voteCount
+                    )
                 }
             }
         })
