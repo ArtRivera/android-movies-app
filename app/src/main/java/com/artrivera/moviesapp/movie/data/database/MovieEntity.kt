@@ -30,4 +30,6 @@ data class MovieEntity(
     val originalTitle: String,
     @ColumnInfo(name = "popularity")
     val popularity: Double,
+    @ColumnInfo(name = "movie_type")
+    val movieType: String
 )

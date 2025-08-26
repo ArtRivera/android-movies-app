@@ -17,6 +17,7 @@ import com.artrivera.moviesapp.movie.data.network.TheMovieDbRemoteDataSource
 import com.artrivera.moviesapp.movie.data.repository.MovieRepositoryImpl
 import com.artrivera.moviesapp.movie.domain.Movie
 import com.artrivera.moviesapp.core.Result
+import com.artrivera.moviesapp.core.data.database.AppDatabase
 import com.artrivera.moviesapp.core.presentation.BaseFragment
 import com.bumptech.glide.Glide
 import kotlin.getValue
@@ -27,7 +28,10 @@ class MovieDetailFragment : BaseFragment() {
     private val args by navArgs<MovieDetailFragmentArgs>()
     private val viewModel by viewModels<MovieDetailViewModel> {
         MovieDetailViewModelFactory(
-            MovieRepositoryImpl(TheMovieDbRemoteDataSource(TheMovieDbClient.instance))
+            MovieRepositoryImpl(
+                TheMovieDbRemoteDataSource(TheMovieDbClient.instance),
+                AppDatabase.getInstance(requireContext()).movieDao()
+            )
         )
     }
 
