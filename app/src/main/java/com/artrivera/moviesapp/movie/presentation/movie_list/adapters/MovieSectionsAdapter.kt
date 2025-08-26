@@ -3,7 +3,7 @@ package com.artrivera.moviesapp.movie.presentation.movie_list.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.artrivera.moviesapp.core.BaseViewHolder
+import com.artrivera.moviesapp.core.presentation.BaseViewHolder
 import com.artrivera.moviesapp.databinding.SectionOfMoviesListBinding
 import com.artrivera.moviesapp.movie.domain.MovieSection
 

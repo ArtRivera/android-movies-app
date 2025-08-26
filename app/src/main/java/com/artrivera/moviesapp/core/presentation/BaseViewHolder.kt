@@ -1,4 +1,4 @@
-package com.artrivera.moviesapp.core
+package com.artrivera.moviesapp.core.presentation
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
-import com.artrivera.moviesapp.core.Result
+import com.artrivera.moviesapp.core.data.Result
 import com.artrivera.moviesapp.movie.domain.MovieRepository
 import com.artrivera.moviesapp.movie.domain.MovieSection
 import kotlinx.coroutines.Dispatchers

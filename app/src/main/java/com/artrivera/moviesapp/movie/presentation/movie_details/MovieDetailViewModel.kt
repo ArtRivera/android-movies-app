@@ -3,7 +3,7 @@ package com.artrivera.moviesapp.movie.presentation.movie_details
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
-import com.artrivera.moviesapp.core.Result
+import com.artrivera.moviesapp.core.data.Result
 import com.artrivera.moviesapp.movie.domain.MovieRepository
 import kotlinx.coroutines.Dispatchers
 

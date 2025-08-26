@@ -1,4 +1,4 @@
-package com.artrivera.moviesapp.core
+package com.artrivera.moviesapp.core.data
 
 sealed class Result {
     object Loading : Result()

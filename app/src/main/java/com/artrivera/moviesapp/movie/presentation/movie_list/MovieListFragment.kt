@@ -15,8 +15,9 @@ import com.artrivera.moviesapp.movie.data.network.TheMovieDbRemoteDataSource
 import com.artrivera.moviesapp.movie.data.repository.MovieRepositoryImpl
 import com.artrivera.moviesapp.movie.presentation.MoviesViewModel
 import com.artrivera.moviesapp.movie.presentation.MoviesViewModelFactory
-import com.artrivera.moviesapp.core.Result
+import com.artrivera.moviesapp.core.data.Result
 import com.artrivera.moviesapp.core.data.database.AppDatabase
+import com.artrivera.moviesapp.core.data.network.SimpleInternetChecker
 import com.artrivera.moviesapp.core.presentation.BaseFragment
 import com.artrivera.moviesapp.movie.domain.Movie
 import com.artrivera.moviesapp.movie.domain.MovieSection
@@ -31,7 +32,8 @@ class MovieListFragment : BaseFragment(),
         MoviesViewModelFactory(
             MovieRepositoryImpl(
                 TheMovieDbRemoteDataSource(TheMovieDbClient.instance),
-                AppDatabase.getInstance(requireContext()).movieDao()
+                AppDatabase.getInstance(requireContext()).movieDao(),
+                SimpleInternetChecker,
             )
         )
     }
